@@ -1,0 +1,17 @@
+postgres:
+  image: postgres:9.5.0
+
+web:
+  build: .
+  command: puma -b tcp://0.0.0.0:3000
+  ports:
+    - '80:3000'
+    - '443:3000'
+  links:
+    - postgres
+  environment:
+    - ENV_VARIABLE_1
+    - ENV_VARIABLE_2
+    - ENV_VARIABLE_3
+  volumes:
+    - ./volumes/yourapp:/usr/src/app/public/system

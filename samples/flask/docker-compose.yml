@@ -1,0 +1,14 @@
+redis:
+  image: redis:3.0
+
+web:
+  build: .
+  command: python app.py
+  ports:
+    - '80:5000'
+  links:
+    - redis
+  environment:
+    - ENV_VARIABLE_1
+    - ENV_VARIABLE_2
+    - ENV_VARIABLE_3

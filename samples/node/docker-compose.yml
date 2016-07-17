@@ -1,0 +1,14 @@
+mongo:
+  image: mongo:3.2.1
+
+web:
+  build: .
+  command: npm start
+  ports:
+    - '80:8888'
+  links:
+    - mongo
+  environment:
+    - ENV_VARIABLE_1
+    - ENV_VARIABLE_2
+    - ENV_VARIABLE_3

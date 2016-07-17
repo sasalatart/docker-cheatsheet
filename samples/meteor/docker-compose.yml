@@ -1,0 +1,15 @@
+mongo:
+  image: mongo:3.2.1
+
+web:
+  build: .
+  ports:
+    - '80:80'
+  links:
+    - mongo
+  environment:
+    - MONGO_URL=mongodb://mongo/yourapp
+    - ROOT_URL=http://0.0.0.0
+    - ENV_VARIABLE_3
+    - ENV_VARIABLE_4
+    - ENV_VARIABLE_5
