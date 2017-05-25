@@ -1,6 +1,6 @@
 # Docker Cheatsheet
 
-### Docker Instalation Instructions for Ubuntu (>= 14.04)
+### Docker Installation Instructions for Ubuntu (>= 14.04)
 
 ```sh
 # Verify that you have wget installed.
@@ -16,6 +16,12 @@ $ wget -qO- https://get.docker.com/ | sh
 
 # Create a Docker group and add your user.
 $ sudo usermod -aG docker $(whoami)
+
+# Start the Docker service as root.
+$ sudo su -
+$ service docker start
+
+# Exit root (ctrl + d)
 ```
 
 ### Useful Commands
@@ -209,7 +215,7 @@ See the memory usage of all running containers.
 
 ---
 
-### Docker Compose Instalation Instructions for Ubuntu (>= 14.04)
+### Docker Compose Installation Instructions for Ubuntu (>= 14.04)
 
 ```sh
 # Verify that you have pip3 installed.
@@ -221,12 +227,6 @@ $ sudo apt-get -y install python3-pip
 
 # Download and install docker-compose.
 $ sudo pip3 install docker-compose
-
-# Start the Docker service as root.
-$ sudo su -
-$ service docker start
-
-# Exit root (ctrl + d)
 ```
 
 ### Useful Commands
